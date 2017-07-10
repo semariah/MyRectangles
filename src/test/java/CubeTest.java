@@ -33,4 +33,11 @@ public class CubeTest {
         assertEquals(5400, testCube.surfaceArea());
     }
 
+    @Test
+    public void area_returnsTheAreaOfTheRectangle_450() throws Exception{
+        Rectangle testRectangle = new Rectangle(15, 30);
+        assertEquals(450, testRectangle.area());
+    }
+
+
 }
