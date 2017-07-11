@@ -21,12 +21,17 @@ public class App {
         }, new HandlebarsTemplateEngine());
 
         post("/rectangles/new", (req, res) -> {
-            Map<String, ArrayList<Rectangle>> model = new HashMap<>();
+            Map<String, Object> model = new HashMap<>();
             int height = Integer.parseInt(req.queryParams("height"));
             int width = Integer.parseInt(req.queryParams("width"));
             Rectangle myRectangle = new Rectangle(height, width); //as we know this will automatically add itself to a list of all rectangles.
-            res.redirect("/"); //send user to root route. Cool eh!
-            return null; //gotta send back something otherwise we get an error.
-        });
+            model.put("myRectangle", myRectangle);
+
+            if (myRectangle.getShape()) {
+                Cube myCube = new Cube(myRectangle);
+                model.put("myCube", myCube);
+            }
+            return new ModelAndView(model, "rectangle-detail.hbs");
+        }, new HandlebarsTemplateEngine());
     }
 }
