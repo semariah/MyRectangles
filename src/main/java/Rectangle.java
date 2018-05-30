@@ -23,6 +23,7 @@ public class Rectangle {
     public int getWidth() {
         return width;
     }
+
     public static ArrayList<Rectangle> getAll() {
         return mInstances;
     }
@@ -38,6 +39,10 @@ public class Rectangle {
         else {
             return false;
         }
+    }
+
+    public int calculateArea() {
+        return height * width;
     }
 
 }

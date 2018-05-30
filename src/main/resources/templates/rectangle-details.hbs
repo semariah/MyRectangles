@@ -1,0 +1,16 @@
+<h2>Exciting stats on your rectangle!</h2>
+
+{{#if newRectangle}}
+    <p><h3>Your rectangle's height is {{newRectangle.height}}.</h3></p>
+    <p><h3>Your rectangle's width is {{newRectangle.width}}.</h3></p>
+
+    {{#if newRectangle.shape}}
+        <p><h3>Your Rectangle is a square.</h3></p>
+        {{newCube.surfaceArea}} units surface area and <br>
+        {{newCube.volume}} units volume.
+    {{else}}
+        <p><h3>Your rectangle isn't a square, sorry.</h3></p>
+    {{/if}}
+{{else}}
+    <p><h3>No details found.</h3></p>
+{{/if}}
